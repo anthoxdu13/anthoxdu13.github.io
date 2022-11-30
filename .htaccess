@@ -1,0 +1,2 @@
+ErrorDocument 404 /404/404.html
+RewriteRule ^(.*)\.html$ /$1 [L,R=301]
