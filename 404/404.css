@@ -599,7 +599,7 @@ div.container.center {
 .card {
   background-color: var(--card-color);
   border-radius: 10px;
-  box-shadow: 0 3px 10px #000000;
+  box-shadow: 0 3px 10px #EBB71C;
   padding: 20px;
   margin: 10px;
 }
