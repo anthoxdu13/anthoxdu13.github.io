@@ -104,10 +104,10 @@ img.right {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-#logo {
-  background-image: url(/images/logo2.gif);
-  height: 36px;
-  width: 152px;
+.logo {
+  background-image: url(assets\avatar.png);
+  height: 38px;
+  width: 38px;
   background-repeat: no-repeat;
   position: relative;
   top: 8px;
