@@ -404,3 +404,44 @@ input[type="checkbox"]:checked::after {
   margin-left: auto;
   margin-right: auto;
 }
+
+#my-projects {
+  text-align: center;
+}
+
+.project {
+  display: inline-block;
+  width: 30%;
+  margin: 2% 5%;
+  text-align: left;
+}
+
+.project h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.project p {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 1em;
+}
+
+.project a {
+  display: inline-block;
+  font-size: 0.9em;
+  padding: 0.5em 1em;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.project img {
+  border: 1px solid #1C256A;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}

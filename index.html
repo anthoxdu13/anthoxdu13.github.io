@@ -18,6 +18,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/77338df779.css" crossorigin="anonymous">
 	<title>Le site officiel de Anthoxdu13</title>
 	<link rel="icon" href="assets\avatar.png"/>
 </head>
@@ -45,14 +46,29 @@
             <p>Sur le site officiel de </p><p style="color: #EBB71C">Anthoxdu13</p>
           </div>
         </section>
-        <section class="projet" id="Projet">
-          <div class="container">
-            <br>
-            <br>
-            <br>
-              <h2>Mes Projets :</h2>
-              <img src="https://cdn.discordapp.com/attachments/811502949095702528/986322593323831337/default-modified.png" alt="">
+        <br>
+        <br>
+        <section id="my-projects">
+          <h2>Mes projets :</h2>
+          <div class="project">
+            <img src="https://cdn.discordapp.com/attachments/811502949095702528/986322593323831337/default-modified.png" alt="Nextbot Image du projet">
+            <h3>🔥・NextBot</h3>
+            <p>Un bot discord Multifonction, Personalisable, écrits en Ptyhon 3</p>
+            <a href="https://github.com/anthoxdu13/NextBot">En savoir plus</a>
           </div>
+          <div class="project">
+            <img src="https://azodia.net/storage/img/aozozozzo.png" alt="Azodia Image du projet">
+            <h3>⚔️・Azodia Mc</h3>
+            <p>Azodia est un serveur Minecraft de la 1.8 - 1.19.2 | Pvp, Mini jeux</p>
+            <a href="https://azodia.net">En savoir plus</a>
+          </div>
+          <div class="project">
+            <img src="" alt="Earn Methode Image du projet">
+            <h3>💲・Earn Method</h3>
+            <p>Des techniques gratuites, simple & éfficace pour faire de l'argent en ligne !</p>
+            <a href="https://azodia.net">En savoir plus</a>
+          </div>
+          <!-- Ajouter autant de projets que nécessaire -->
         </section>
   </main>
   <footer>
@@ -66,3 +82,16 @@
   </footer>
 </body>
 <script src="assets/counter.js"></script>
+<script>
+  const projects = document.querySelectorAll('.project');
+
+projects.forEach(project => {
+  project.addEventListener('mouseenter', () => {
+    project.style.transform = 'scale(1.1)';
+  });
+
+  project.addEventListener('mouseleave', () => {
+    project.style.transform = 'scale(1)';
+  });
+});
+</script>
