@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 :root {
-  --navbar-color: #171717;
+  --navbar-color: #1C256A;
   --dark-text-color: #333333;
-  --bright-text-color: #ffffff;
-  --card-color: #171717;
+  --bright-text-color: #B8C7E2;
+  --card-color: #1C256A;
   --footer-color: #454545;
-  --inline-text-color: #898589;
-  --categorylist-color: #232323;
+  --inline-text-color: #2063A5;
+  --categorylist-color: #4853AB;
+  --theme-em-gradient: linear-gradient(90deg,#7209d4,#2832d4 33%,#00a5b2);
 }
 
 * {
